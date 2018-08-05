@@ -39,10 +39,10 @@ angular.module('authModule')
 				let c = vm.user.contact; 
                 let address = c.address1.split(' ').join('+') + '+' + c.city + '+' + c.state + '+' + c.zipcode;
                 distanceMatrixService.geocode(address).then(function(res){
-                		let geometry = res.data.results.pop().geometry.location; 
+                		// let geometry = res.data.results.pop().geometry.location; 
                 		
-                		vm.user.contact.latitude = geometry.lat; 
-                		vm.user.contact.longitude = geometry.lng; 
+                		// vm.user.contact.latitude = geometry.lat; 
+                		// vm.user.contact.longitude = geometry.lng; 
                 		authService.register(vm.user).then(function (res) {
                 			var id = res.data.id; 
                 			console.log(res); 
